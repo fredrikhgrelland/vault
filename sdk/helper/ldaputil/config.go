@@ -201,7 +201,7 @@ func NewConfigEntry(existing *ConfigEntry, d *framework.FieldData) (*ConfigEntry
 	}
 
 	if _, ok := d.Raw["userattr"]; ok || !hadExisting {
-		cfg.UserAttr = strings.ToLower(d.Get("userattr").(string))
+		cfg.UserAttr = d.Get("userattr").(string)
 	}
 
 	if _, ok := d.Raw["userdn"]; ok || !hadExisting {
